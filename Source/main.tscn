@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csxbk6wno8p41"]
+[gd_scene load_steps=8 format=3 uid="uid://csxbk6wno8p41"]
 
 [ext_resource type="Texture2D" uid="uid://hclkaqetjbwu" path="res://3128418.jpg" id="1_subiw"]
 [ext_resource type="PackedScene" uid="uid://cc6bhuqiilc16" path="res://scenes/main_character.tscn" id="2_or4lx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kw5bk3nygcjx" path="res://tile.png" id="4_qs3mm"]
 [ext_resource type="Texture2D" uid="uid://faroqaq04k58" path="res://twoSideTile.png" id="5_o4o5r"]
 [ext_resource type="Script" path="res://LineEdit.gd" id="6_5mjk0"]
+[ext_resource type="PackedScene" uid="uid://doyxqlx6p277c" path="res://scenes/console/console.tscn" id="7_hnlub"]
 
 [node name="Node" type="Node"]
 
@@ -43,3 +44,7 @@ offset_top = 529.0
 offset_right = 714.0
 offset_bottom = 611.0
 script = ExtResource("6_5mjk0")
+
+[node name="console" parent="." instance=ExtResource("7_hnlub")]
+scale = Vector2(10, 10)
+transform = Transform2D(10, 0, 0, 10, 0, 0)
