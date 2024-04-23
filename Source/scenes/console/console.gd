@@ -72,6 +72,11 @@ func set_child_folder_names(names : Array):
 	child_folder_names = names
 
 
+
+func setup_console(child_folders : Array, current_directory : String):
+	set_child_folder_names(child_folders)
+	set_current_directory(current_directory)
+
 func parse_text():
 	var first_word = input_field.text.split(" ")[0]
 	match first_word:

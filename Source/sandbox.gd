@@ -3,7 +3,7 @@ extends Node2D
 @onready var console = $Control
 
 func _ready():
-	console.set_child_folder_names(["usr", "bin"])
+	console.setup_console(["usr", "bin"], "root")
 
 
 func _input(event):
