@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://doyxqlx6p277c"]
+
+[ext_resource type="Script" path="res://console.gd" id="1_0ohg7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eea8e"]
+bg_color = Color(0.647059, 0.647059, 0.647059, 1)
+
+[sub_resource type="Theme" id="Theme_bn2fw"]
+
+[node name="CLI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 894.0
+offset_bottom = 376.0
+script = ExtResource("1_0ohg7")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eea8e")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CommandHistory" type="PanelContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="History" type="Label" parent="Background/MarginContainer/VBoxContainer/CommandHistory"]
+layout_mode = 2
+text = "dzień dobry"
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/InputArea"]
+layout_mode = 2
+
+[node name="CurrentDirectory" type="Label" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "siema"
+
+[node name="TextEdit" type="TextEdit" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+theme = SubResource("Theme_bn2fw")
