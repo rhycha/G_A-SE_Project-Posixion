@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://doyxqlx6p277c"]
+
+[ext_resource type="Script" path="res://scenes/console/console.gd" id="1_dohpa"]
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://scenes/console/Hack-Regular.ttf" id="2_gc0hn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eea8e"]
+bg_color = Color(0.313726, 0.760784, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2vqe"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob7t3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdof4"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CLI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 894.0
+offset_bottom = 376.0
+script = ExtResource("1_dohpa")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eea8e")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CommandHistory" type="PanelContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w2vqe")
+
+[node name="History" type="Label" parent="Background/MarginContainer/VBoxContainer/CommandHistory"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_gc0hn")
+theme_override_font_sizes/font_size = 24
+vertical_alignment = 2
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/InputArea"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CurrentDirectory" type="Label" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0.964706, 1, 1)
+theme_override_fonts/font = ExtResource("2_gc0hn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ob7t3")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+theme_override_fonts/font = ExtResource("2_gc0hn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_pdof4")
