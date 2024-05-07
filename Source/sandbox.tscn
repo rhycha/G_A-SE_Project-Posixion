@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmjr7amlr64m2"]
 
-[ext_resource type="PackedScene" uid="uid://doyxqlx6p277c" path="res://scenes/console/console.tscn" id="1_1bv0v"]
+[ext_resource type="PackedScene" uid="uid://doyxqlx6p277c" path="res://UI/console/console.tscn" id="1_1bv0v"]
 [ext_resource type="Script" path="res://sandbox.gd" id="1_4qp2e"]
 
 [node name="sandbox" type="Node2D"]

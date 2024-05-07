@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpbwq63d6ipr7"]
+
+[ext_resource type="Script" path="res://enemies/tooth_monser/tooth_monser.gd" id="1_21k8w"]
+[ext_resource type="Texture2D" uid="uid://hdqrtrk8dsvu" path="res://enemies/tooth_monser/mob.png" id="1_i012s"]
+[ext_resource type="PackedScene" uid="uid://cakqcll0w3t83" path="res://UI/timer/visual_timer.tscn" id="3_y8kur"]
+
+[node name="ToothMonser" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_21k8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i012s")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VisualTimer" parent="." instance=ExtResource("3_y8kur")]
+offset_left = 8.0
+offset_top = -160.0
+offset_right = 48.0
+offset_bottom = -120.0
+radius = 30.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

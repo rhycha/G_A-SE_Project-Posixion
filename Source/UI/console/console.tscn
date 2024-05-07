@@ -1,18 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://doyxqlx6p277c"]
+[gd_scene load_steps=7 format=3 uid="uid://doyxqlx6p277c"]
 
-[ext_resource type="Script" path="res://console.gd" id="1_0ohg7"]
+[ext_resource type="Script" path="res://UI/console/console.gd" id="1_dohpa"]
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://UI/console/Hack-Regular.ttf" id="2_gc0hn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eea8e"]
-bg_color = Color(0.647059, 0.647059, 0.647059, 1)
+bg_color = Color(0.313726, 0.760784, 0.25098, 1)
 
-[sub_resource type="Theme" id="Theme_bn2fw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2vqe"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob7t3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdof4"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="CLI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 894.0
 offset_bottom = 376.0
-script = ExtResource("1_0ohg7")
+script = ExtResource("1_dohpa")
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -38,25 +46,39 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w2vqe")
 
 [node name="History" type="Label" parent="Background/MarginContainer/VBoxContainer/CommandHistory"]
 layout_mode = 2
-text = "dzień dobry"
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_gc0hn")
+theme_override_font_sizes/font_size = 24
+vertical_alignment = 2
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/InputArea"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="CurrentDirectory" type="Label" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "siema"
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0.964706, 1, 1)
+theme_override_fonts/font = ExtResource("2_gc0hn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ob7t3")
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+[node name="TextEdit" type="LineEdit" parent="Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 9.0
-theme = SubResource("Theme_bn2fw")
+theme_override_fonts/font = ExtResource("2_gc0hn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_pdof4")

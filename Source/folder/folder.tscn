@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjf1uig5og6vp"]
+
+[ext_resource type="Script" path="res://folder/folder.gd" id="1_mhool"]
+[ext_resource type="Texture2D" uid="uid://bu03cnoqt1pqe" path="res://folder/dir_image.png" id="2_epajs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mcmg1"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Folder" type="Node2D"]
+script = ExtResource("1_mhool")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_epajs")
+
+[node name="Name" type="Label" parent="."]
+offset_left = -117.0
+offset_top = -69.0
+offset_right = -77.0
+offset_bottom = -46.0
+label_settings = SubResource("LabelSettings_mcmg1")
+
+[node name="PlayerPosition" type="Marker2D" parent="."]
+position = Vector2(-86, 72)
+
+[node name="EnemyPosition" type="Marker2D" parent="."]
+position = Vector2(100, 68)

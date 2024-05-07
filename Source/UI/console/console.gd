@@ -14,7 +14,7 @@ func array_to_string(arr: Array, linker : String = '\n') -> String:
 	return s + String(arr[-1])
 
 func set_current_directory(text):
-	current_directory.text = text
+	current_directory.text = text + "> "
 	
 func clear():
 	input_field.clear()
@@ -65,7 +65,7 @@ func change_directory():
 	var argument = text[1]	 
 	for direction in child_folder_names:
 		if argument == direction:
-			return [["cd", direction], text]
+			return [["cd", direction], input_field.text]
 	return ["error","cd: no such file or directory: " + argument]
 
 func set_child_folder_names(names : Array):

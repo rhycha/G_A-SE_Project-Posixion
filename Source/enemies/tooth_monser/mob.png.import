@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3f1java4hwib"
-path="res://.godot/imported/3258087.jpg-52704cedd8c73a4c588567092abf6f61.ctex"
+uid="uid://hdqrtrk8dsvu"
+path="res://.godot/imported/mob.png-ac6ca827295cec7e691630ba3e245fed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3258087.jpg"
-dest_files=["res://.godot/imported/3258087.jpg-52704cedd8c73a4c588567092abf6f61.ctex"]
+source_file="res://enemies/tooth_monser/mob.png"
+dest_files=["res://.godot/imported/mob.png-ac6ca827295cec7e691630ba3e245fed.ctex"]
 
 [params]
 
