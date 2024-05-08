@@ -25,6 +25,8 @@ func _ready():
 	spawn_monsers()
 	player.setup(starting_folder)
 	
+	Global.current_level = self
+	
 	for folder in folders.get_children():
 		setup_folder_connections(folder)
 	
@@ -56,7 +58,18 @@ func spawn_monsers():
 		instance.place_in_folder(spawn_position)
 		instance.connect("catched_player", _on_tooth_monser_catched_player)
 		$Monsers.add_child(instance)
-		
+
+
+func end_game(win: bool):
+	var game_over_scene = preload("res://UI/game_over_screen/game_over_screen.tscn")
+	var game_over_instance = game_over_scene.instantiate()
+	add_child(game_over_instance)
+	get_tree().paused = true
+	game_over_instance.set_title(win)
 
 func _on_tooth_monser_catched_player():
-	print("encounter")
+	end_game(false)
+
+
+func _on_bin_player_entered():
+	end_game(true)

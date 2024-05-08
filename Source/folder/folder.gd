@@ -6,6 +6,7 @@ extends Node2D
 
 var connected_folders : Array
 
+signal player_entered
 
 
 
@@ -22,4 +23,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Global.player.current_folder == name:
+		player_entered.emit()

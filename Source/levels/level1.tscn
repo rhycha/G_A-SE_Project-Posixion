@@ -39,3 +39,5 @@ position = Vector2(1419, 730)
 position = Vector2(424, 346)
 
 [node name="Monsers" type="Node2D" parent="."]
+
+[connection signal="player_entered" from="Folders/bin" to="." method="_on_bin_player_entered"]
