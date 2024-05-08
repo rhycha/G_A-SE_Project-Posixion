@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://doyxqlx6p277c"]
 
 [ext_resource type="Script" path="res://UI/console/console.gd" id="1_dohpa"]
-[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://UI/console/Hack-Regular.ttf" id="2_gc0hn"]
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://common/Hack-Regular.ttf" id="2_gc0hn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eea8e"]
 bg_color = Color(0.313726, 0.760784, 0.25098, 1)

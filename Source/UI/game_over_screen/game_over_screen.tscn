@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://da5dvrophsxr"]
+
+[ext_resource type="Script" path="res://UI/game_over_screen/game_over_screen.gd" id="1_74hav"]
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://common/Hack-Regular.ttf" id="1_on6dk"]
+[ext_resource type="Theme" uid="uid://b24o8t8xwrjia" path="res://common/Hack_regular_36.tres" id="2_meow5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvoks"]
+font = ExtResource("1_on6dk")
+font_size = 64
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_74hav")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.52
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_bvoks")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_meow5")
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_meow5")
+text = "Main menu"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_meow5")
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -21,7 +21,7 @@ func clear():
 
 # Called when the node enters the scene tree for the first time.
 func _ready(history_size = 5, text = ">"):
-	#input_field.grab_focus()
+	input_field.grab_focus()
 	#set_current_directory(text)
 	pass
 

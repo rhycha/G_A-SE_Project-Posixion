@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://xmewfts2fgkc"
-path="res://.godot/imported/Hack-Regular.ttf-ef39b824a16b13196533f650a5512151.fontdata"
+path="res://.godot/imported/Hack-Regular.ttf-65de375d5c81f88143c0b402a0292e2d.fontdata"
 
 [deps]
 
-source_file="res://UI/console/Hack-Regular.ttf"
-dest_files=["res://.godot/imported/Hack-Regular.ttf-ef39b824a16b13196533f650a5512151.fontdata"]
+source_file="res://common/Hack-Regular.ttf"
+dest_files=["res://.godot/imported/Hack-Regular.ttf-65de375d5c81f88143c0b402a0292e2d.fontdata"]
 
 [params]
 

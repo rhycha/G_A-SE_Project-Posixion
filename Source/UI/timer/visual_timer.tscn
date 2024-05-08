@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cakqcll0w3t83"]
 
-[ext_resource type="Script" path="res://VisualTimer.gd" id="1_rtw6x"]
+[ext_resource type="Script" path="res://UI/timer/VisualTimer.gd" id="1_rtw6x"]
 
 [node name="VisualTimer" type="Control"]
 layout_mode = 3

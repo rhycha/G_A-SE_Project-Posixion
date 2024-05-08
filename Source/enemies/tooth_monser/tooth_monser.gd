@@ -7,10 +7,9 @@ var period = 2
 var current_folder
 
 # Called when the node enters the scene tree for the first time.
-func place_in_folder(folder, folder_position):
+func place_in_folder(folder):
 	current_folder = folder
-	
-	set_global_position(folder_position)
+	set_global_position(Global.folder_references[folder].get_enemy_position())
 
 
 func start_visual_timer():
@@ -24,14 +23,19 @@ func start_moving():
 	$Timer.start()
 
 
-func move(destination_folder, player_folder_name):
-	
+func move():
+	var next_position = Global.available_connections[current_folder].pick_random()
+	position = Global.folder_references[next_position].get_enemy_position()
+	current_folder = next_position
 	return
 	
 
 func _process(delta):
+	if Global.player.current_folder == current_folder:
+		catched_player.emit()
 	pass
 
 
 func _on_timer_timeout():
-	catched_player.emit()
+	move()
+
