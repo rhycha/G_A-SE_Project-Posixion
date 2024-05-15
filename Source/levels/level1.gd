@@ -1,10 +1,9 @@
 extends Node2D
 
 @export var starting_folder : String
-@onready var console = $HUD/CLI
+@onready var console = $HUD/Control/CLI
 @onready var folders = $Folders
 @onready var player = $Player
-
 
 var available_connections = {
 	"usr": ["bin", "root"],
@@ -12,6 +11,7 @@ var available_connections = {
 	"root": ["usr", "bin"],
 }
 
+#var monsers_spawn_positions = []
 var monsers_spawn_positions = ["bin"]
 
 func setup_folder_connections(folder):
@@ -24,7 +24,6 @@ func _ready():
 	console.setup_console(available_connections[starting_folder], starting_folder)
 	spawn_monsers()
 	player.setup(starting_folder)
-	
 	Global.current_level = self
 	
 	for folder in folders.get_children():
@@ -71,3 +70,10 @@ func _on_tooth_monser_catched_player():
 
 func _on_bin_player_entered():
 	end_game(true)
+
+func _draw():
+	for folder in Global.available_connections:
+		var starting_point = Global.folder_references[folder].global_position
+		for connected_folders in Global.available_connections[folder]:
+			var end_point = Global.folder_references[connected_folders].global_position
+			draw_line(starting_point, end_point, Color.BLUE, 10)

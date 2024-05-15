@@ -9,5 +9,5 @@ func _draw():
 		for connected_folders in Global.available_connections[folder]:
 			var end_point = Global.folder_references[connected_folders].global_position
 			print(starting_point, end_point)
-			draw_line(starting_point, end_point, Color.BLUE, 10)
+			draw_line(starting_point, end_point, Color.BLUE, 100)
 	

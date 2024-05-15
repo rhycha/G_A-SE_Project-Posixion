@@ -9,3 +9,12 @@ script = ExtResource("1_5sre0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_1haxp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -2)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="MoveTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
