@@ -59,7 +59,6 @@ func spawn_monsers():
 		instance.connect("catched_player", _on_tooth_monser_catched_player)
 		$Monsers.add_child(instance)
 
-
 func end_game(win: bool):
 	var game_over_scene = preload("res://UI/game_over_screen/game_over_screen.tscn")
 	var game_over_instance = game_over_scene.instantiate()
@@ -69,7 +68,6 @@ func end_game(win: bool):
 
 func _on_tooth_monser_catched_player():
 	end_game(false)
-
 
 func _on_bin_player_entered():
 	end_game(true)

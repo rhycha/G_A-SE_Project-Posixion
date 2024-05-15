@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csxbk6wno8p41"]
+[gd_scene load_steps=6 format=3 uid="uid://csxbk6wno8p41"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_2xkir"]
 [ext_resource type="PackedScene" uid="uid://cc6bhuqiilc16" path="res://player/player.tscn" id="2_3ceo2"]
 [ext_resource type="PackedScene" uid="uid://dqwvtxven33aj" path="res://UI/hud.tscn" id="2_myxnv"]
 [ext_resource type="PackedScene" uid="uid://bjf1uig5og6vp" path="res://folder/folder.tscn" id="4_48234"]
+[ext_resource type="PackedScene" uid="uid://bxrwio1llp12i" path="res://UI/folder_lines/folder_lines.tscn" id="5_0bcic"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_2xkir")
@@ -23,6 +24,8 @@ offset_right = 52.0
 offset_bottom = 1032.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="folder_lines" parent="." instance=ExtResource("5_0bcic")]
 
 [node name="Folders" type="Node2D" parent="."]
 
