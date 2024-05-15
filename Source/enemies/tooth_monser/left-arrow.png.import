@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hclkaqetjbwu"
-path="res://.godot/imported/3128418.jpg-5b8d62fa3017cad4a9da1a32f3d28809.ctex"
+uid="uid://diasck6k6l7fu"
+path="res://.godot/imported/left-arrow.png-e7a80f0464168cd3e3a91c6189f006c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3128418.jpg"
-dest_files=["res://.godot/imported/3128418.jpg-5b8d62fa3017cad4a9da1a32f3d28809.ctex"]
+source_file="res://enemies/tooth_monser/left-arrow.png"
+dest_files=["res://.godot/imported/left-arrow.png-e7a80f0464168cd3e3a91c6189f006c0.ctex"]
 
 [params]
 

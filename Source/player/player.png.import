@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://faroqaq04k58"
-path="res://.godot/imported/twoSideTile.png-46936412bf161ac6ab61a8d5dc22c293.ctex"
+uid="uid://8f1ajykc0nq3"
+path="res://.godot/imported/player.png-1ad27fc2a62fa126eae918723933dd6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://twoSideTile.png"
-dest_files=["res://.godot/imported/twoSideTile.png-46936412bf161ac6ab61a8d5dc22c293.ctex"]
+source_file="res://player/player.png"
+dest_files=["res://.godot/imported/player.png-1ad27fc2a62fa126eae918723933dd6f.ctex"]
 
 [params]
 

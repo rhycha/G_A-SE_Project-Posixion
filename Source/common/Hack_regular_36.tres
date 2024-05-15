@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b24o8t8xwrjia"]
+
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://common/Hack-Regular.ttf" id="1_svy55"]
+
+[resource]
+default_font = ExtResource("1_svy55")
+default_font_size = 36

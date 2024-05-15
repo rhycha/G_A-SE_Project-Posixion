@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4h40qjpuncxt"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_3ugq5"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_3ugq5")
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.0
+offset_top = 145.0
+offset_right = -205.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 146.0
+offset_right = 121.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 2
+"
+
+[node name="level3" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 209.0
+offset_top = 147.0
+offset_right = 449.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 3
+"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="level3" to="." method="_on_level_3_pressed"]
