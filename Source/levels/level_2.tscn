@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbdm8iwe8qtp4"]
+
+[ext_resource type="Script" path="res://levels/level_2.gd" id="1_jua8i"]
+[ext_resource type="PackedScene" uid="uid://25m43hoyddd8" path="res://levels/base_level.tscn" id="2_w5e4l"]
+[ext_resource type="PackedScene" uid="uid://bjf1uig5og6vp" path="res://folder/folder.tscn" id="3_114h1"]
+
+[node name="level2" type="Node2D"]
+script = ExtResource("1_jua8i")
+
+[node name="BaseLevel" parent="." instance=ExtResource("2_w5e4l")]
+
+[node name="etc" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(135, 584)
+
+[node name="logs" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(815, 64)
+
+[node name="usr" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(806, 586)
+
+[node name="packages" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(817, 1181)
+
+[node name="data" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1531, 49)
+
+[node name="tools" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1552, 603)
+
+[node name="http" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1536, 1187)
+
+[node name="sys" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2284, 56)
+
+[node name="modules" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2276, 620)
+
+[node name="kernel" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2270, 1181)
+
+[node name="temp" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(3100, 638)
+
+[node name="cache" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(3095, 90)
+
+[connection signal="player_entered" from="BaseLevel/data" to="." method="_on_root_player_entered"]

@@ -1,24 +1,23 @@
 extends Node2D
 
-var current_folder = ""
+var current_folder : Node
 @export var move_speed : int
 @onready var move_timer = $MoveTimer
 
-var dest_folder = ""
-
-func setup(start_folder):
-	move(start_folder)
-	Global.player = self
+func setup(start_folder : Node):
+	current_folder = start_folder
+	current_folder.check_in("Player")
+	position = start_folder.get_player_position()
 	
-func move(destination_folder):
-	dest_folder = destination_folder
-	current_folder = ""
+func move(destination_folder : Node):
+	current_folder.check_out("Player")
+	current_folder = destination_folder
 	var tween = create_tween()
-	tween.tween_property(self, "position", Global.folder_references[destination_folder].get_player_position(), 1)
+	tween.tween_property(self, "position", destination_folder.get_player_position(), move_speed)
 	move_timer.start()
 
 func _ready():
 	move_timer.wait_time = move_speed
 
 func _on_move_timer_timeout():
-	current_folder = dest_folder
+	current_folder.check_in("Player")

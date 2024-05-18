@@ -8,6 +8,7 @@ font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="Folder" type="Node2D"]
+show_behind_parent = true
 script = ExtResource("1_mhool")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,11 +1,12 @@
 extends Control
 
-@onready var current_directory = $Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer/CurrentDirectory
+@onready var current_directory_text_field = $Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer/CurrentDirectory
 @onready var input_field = $Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer/TextEdit
 @onready var command_history_field = $Background/MarginContainer/VBoxContainer/CommandHistory/History
 
 @onready var command_history = []
-var child_folder_names
+
+var current_directory : Node
 
 func array_to_string(arr: Array, linker : String = '\n') -> String:
 	var s = ""
@@ -13,17 +14,15 @@ func array_to_string(arr: Array, linker : String = '\n') -> String:
 		s += String(i) + linker
 	return s + String(arr[-1])
 
-func set_current_directory(text):
-	current_directory.text = text + "> "
+#func set_current_directory(text):
+	#current_directory_text_field.text = text + "> "
 	
 func clear():
 	input_field.clear()
 
 # Called when the node enters the scene tree for the first time.
-func _ready(history_size = 5, text = ">"):
+func _ready():
 	input_field.grab_focus()
-	set_current_directory(text)
-	pass
 
 func add_to_history(text):
 	command_history.append(text)
@@ -37,12 +36,12 @@ func check_for_autocomplete() -> bool:
 	if text[0] == "cd" && len(text) > 1:
 		return true
 	return false
-
+#
 func finish_path():
 	var text_array = input_field.text.split(" ")
 	var regex = RegEx.new()
 	regex.compile(text_array[-1] + ".")
-	for direction in child_folder_names:
+	for direction in current_directory.get_connected_folders_names():
 		if regex.search(direction):
 			text_array[-1] = direction
 			input_field.clear()
@@ -63,21 +62,19 @@ func change_directory():
 		return ["error", "cd: too many arguments"]
 	
 	var argument = text[1]	 
-	for direction in child_folder_names:
+	for direction in current_directory.get_connected_folders_names():
 		if argument == direction:
 			return [["cd", direction], input_field.text]
 	return ["error","cd: no such file or directory: " + argument]
 
-func set_child_folder_names(names : Array):
-	child_folder_names = names
 
 
+func setup(start_directory : Node):
+	current_directory_text_field.text = start_directory.name + "> "
+	current_directory = start_directory
 
-func setup_console(child_folders : Array, current_directory : String):
-	set_child_folder_names(child_folders)
-	set_current_directory(current_directory)
 
-func parse_text():
+func parse_text() -> Array:
 	var first_word = input_field.text.split(" ")[0]
 	match first_word:
 		"cd":
