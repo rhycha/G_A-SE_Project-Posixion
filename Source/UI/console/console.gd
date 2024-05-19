@@ -3,7 +3,6 @@ extends Control
 @onready var current_directory_text_field = $Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer/CurrentDirectory
 @onready var input_field = $Background/MarginContainer/VBoxContainer/InputArea/HBoxContainer/TextEdit
 @onready var command_history_field = $Background/MarginContainer/VBoxContainer/CommandHistory/History
-
 @onready var command_history = []
 
 var current_directory : Node
@@ -14,13 +13,10 @@ func array_to_string(arr: Array, linker : String = '\n') -> String:
 		s += String(i) + linker
 	return s + String(arr[-1])
 
-#func set_current_directory(text):
-	#current_directory_text_field.text = text + "> "
 	
 func clear():
 	input_field.clear()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	input_field.grab_focus()
 
@@ -29,7 +25,6 @@ func add_to_history(text):
 	if len(command_history) > 9:
 		command_history.pop_front()
 	command_history_field.text = array_to_string(command_history)
-
 
 func check_for_autocomplete() -> bool:
 	var text = input_field.text.split(" ")
@@ -51,10 +46,9 @@ func finish_path():
 func autocomplete():
 	if check_for_autocomplete():
 		finish_path()
-
-
-func change_directory():
-	var text = input_field.text.split(" ")
+		
+func change_directory(input_text : String) -> Array:
+	var text = input_text.split(" ")
 	if len(text) == 1:
 		return ["error", "No argument for function"]
 	
@@ -64,10 +58,15 @@ func change_directory():
 	var argument = text[1]	 
 	for direction in current_directory.get_connected_folders_names():
 		if argument == direction:
-			return [["cd", direction], input_field.text]
+			return [["cd", direction], input_text]
 	return ["error","cd: no such file or directory: " + argument]
 
-
+func list(input_text : String) -> Array:
+	var text = input_text.split(" ")
+	if len(text) != 1:
+		return ["error", "ls: too many arguments"]
+	return [["ls", ""], input_text]
+	
 
 func setup(start_directory : Node):
 	current_directory_text_field.text = start_directory.name + "> "
@@ -75,12 +74,18 @@ func setup(start_directory : Node):
 
 
 func parse_text() -> Array:
-	var first_word = input_field.text.split(" ")[0]
+	var input_text = input_field.text
+	var first_word = input_text.split(" ")[0]
+	
+	var result : Array
 	match first_word:
 		"cd":
-			var result = change_directory()
+			result = change_directory(input_text)
+			add_to_history(result[1])			
+		"ls":
+			result = list(input_text)
 			add_to_history(result[1])
-			return result
 		_:
 			add_to_history("bash: command not found: " + first_word)
-			return ["error", ""]
+			result =  ["error", ""]
+	return result

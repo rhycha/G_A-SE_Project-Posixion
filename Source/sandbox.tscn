@@ -10,9 +10,13 @@ player_start = "usr"
 
 [node name="BaseLevel" parent="." instance=ExtResource("2_yocv2")]
 player_start = "usr"
+finish_folder = "win"
 
 [node name="usr" parent="BaseLevel" instance=ExtResource("3_7qrxk")]
 position = Vector2(779, 533)
 
 [node name="bin" parent="BaseLevel" instance=ExtResource("3_7qrxk")]
 position = Vector2(1502, 550)
+
+[node name="win" parent="BaseLevel" instance=ExtResource("3_7qrxk")]
+position = Vector2(974, 116)

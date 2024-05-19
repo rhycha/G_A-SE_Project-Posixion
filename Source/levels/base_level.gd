@@ -7,8 +7,8 @@ extends Node2D
 @export var player_start : String
 @export var finish_folder : String
 
-func setup(connections : Dictionary, monsters_spawn_positions : Array):
-	setup_folder(connections)
+func setup(connections : Dictionary, monsters_spawn_positions : Array, hidden_folders : Array):
+	setup_folder(connections, hidden_folders)
 	player.setup(find_child(player_start))
 	console.setup(find_child(player_start))
 	place_monsters(monsters_spawn_positions)
@@ -29,6 +29,10 @@ func interpret_command_result(result):
 			var destination_folder = find_child(command_and_arguments[1])
 			player.move(destination_folder)
 			console.setup(destination_folder)
+			print("oo")
+		"ls":
+			print("siema")
+			console.current_directory.unlock_hidden_connections()
 
 
 func _input(event):
@@ -60,17 +64,13 @@ func _on_monster_catched_player():
 func _player_entered_winning_folder():
 	end_game(true)
 
-func setup_folder(connection_description : Dictionary):
+func setup_folder(connection_description : Dictionary, hidden_folders : Array):
 	for folder_name in connection_description:
 		var folder = find_child(folder_name)
 		folder.connected_folders = get_connected_folders(connection_description[folder_name])
 		folder.connect("monster_cached_player", _on_monster_catched_player)
+	
 	find_child(finish_folder).connect("player_entered", _player_entered_winning_folder)
-
-#func _draw():
-	#for folder in Global.available_connections:
-		#var starting_point = Global.folder_references[folder].global_position
-		#for connected_folders in Global.available_connections[folder]:
-			#var end_point = Global.folder_references[connected_folders].global_position
-			#draw_line(starting_point, end_point, Color.BLUE, 10)
-
+	
+	for folder in hidden_folders:
+		find_child(folder).make_hidden()

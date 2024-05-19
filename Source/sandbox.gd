@@ -5,8 +5,12 @@ extends Node2D
 
 var connections = {
 	"usr": ["bin"],
-	"bin": ["usr"]
+	"bin": ["usr", "win"],
+	"win": ["bin"],
 }
+var monsers = []
+var hidden_folders = ["win"]
+
 
 func _ready():
-	base_level.setup(connections)
+	base_level.setup(connections, monsers, hidden_folders)
