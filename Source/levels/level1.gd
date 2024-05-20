@@ -11,5 +11,7 @@ var connections = {
 
 var monster_position = []
 
+var hidden_folders = []
+
 func _ready():
-	base_level.setup(connections, monster_position)
+	base_level.setup(connections, monster_position, hidden_folders)
