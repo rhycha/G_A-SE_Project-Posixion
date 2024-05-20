@@ -7,10 +7,13 @@ extends Node2D
 var connected_folders : Array
 var entities_inside : Array
 var hidden_folder = false
+var bugged = false
 
 
 signal monster_cached_player
 signal player_entered
+signal bug_removed
+
 
 func check_in(entity_name : String):
 	entities_inside.append(entity_name)
@@ -36,6 +39,17 @@ func make_hidden():
 	$Name.visible = false
 	hidden_folder = true
 
+func make_bugged():
+	bugged = true
+	$BugIcon.show()
+	
+func remove_bug():
+	if bugged == true:
+		bugged = false
+		$BugIcon.hide()
+		bug_removed.emit()
+	
+
 func get_connected_folders_names() -> Array:
 	var output = []
 	for folder in connected_folders:
@@ -55,6 +69,7 @@ func get_enemy_position():
 
 func _ready():
 	folder_name.text = name
+	$BugIcon.hide()
 
 func _draw():
 	var starting_point = global_position

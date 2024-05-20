@@ -30,13 +30,19 @@ func check_for_autocomplete() -> bool:
 	var text = input_field.text.split(" ")
 	if text[0] == "cd" && len(text) > 1:
 		return true
+	if text[0] == "rm" && len(text) > 1:
+		return true
 	return false
 #
 func finish_path():
 	var text_array = input_field.text.split(" ")
 	var regex = RegEx.new()
 	regex.compile(text_array[-1] + ".")
-	for direction in current_directory.get_connected_folders_names():
+	
+	var options = current_directory.get_connected_folders_names()
+	if current_directory.bugged && text_array[0] == "rm":
+		options.append("bug")	
+	for direction in options:
 		if regex.search(direction):
 			text_array[-1] = direction
 			input_field.clear()
@@ -65,13 +71,28 @@ func list(input_text : String) -> Array:
 	var text = input_text.split(" ")
 	if len(text) != 1:
 		return ["error", "ls: too many arguments"]
-	return [["ls", ""], input_text]
+	return [["ls", current_directory], input_text]
 	
 
 func setup(start_directory : Node):
 	current_directory_text_field.text = start_directory.name + "> "
 	current_directory = start_directory
 
+func remove(input_text : String):
+	var text = input_text.split(" ")
+	if len(text) < 2:
+		return ["error", "rm: too few arguments"]
+	if len(text) > 2:
+		return ["error", "rm: too many arguments"]	
+			
+	if text[0] == "rm" and text[1] == "bug":
+		if current_directory.bugged == true:
+			return  [["rm", current_directory], input_text]
+		else:
+			return ["error", "rm: no such file as bug"]
+	
+
+	
 
 func parse_text() -> Array:
 	var input_text = input_field.text
@@ -84,6 +105,9 @@ func parse_text() -> Array:
 			add_to_history(result[1])			
 		"ls":
 			result = list(input_text)
+			add_to_history(result[1])
+		"rm":
+			result = remove(input_text)
 			add_to_history(result[1])
 		_:
 			add_to_history("bash: command not found: " + first_word)

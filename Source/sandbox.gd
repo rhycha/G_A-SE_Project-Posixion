@@ -10,7 +10,7 @@ var connections = {
 }
 var monsers = []
 var hidden_folders = ["win"]
-
+var bugged_folders = ["usr"]
 
 func _ready():
-	base_level.setup(connections, monsers, hidden_folders)
+	base_level.setup(connections, monsers, hidden_folders, bugged_folders)

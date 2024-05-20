@@ -7,11 +7,20 @@ extends Node2D
 @export var player_start : String
 @export var finish_folder : String
 
-func setup(connections : Dictionary, monsters_spawn_positions : Array, hidden_folders : Array):
+var bug_counter : int
+
+func setup(connections : Dictionary, monsters_spawn_positions : Array, hidden_folders  = [], bugged_folders = []):
 	setup_folder(connections, hidden_folders)
 	player.setup(find_child(player_start))
 	console.setup(find_child(player_start))
 	place_monsters(monsters_spawn_positions)
+	place_bugged_folders(bugged_folders)
+	bug_counter = len(bugged_folders)
+	
+func place_bugged_folders(bugged_folders : Array):
+	for folder in bugged_folders:
+		find_child(folder).make_bugged()
+
 	
 func place_monsters(spawn_positions : Array):
 	var monster_scene = preload("res://enemies/tooth_monser/tooth_monser.tscn")
@@ -30,7 +39,9 @@ func interpret_command_result(result):
 			player.move(destination_folder)
 			console.setup(destination_folder)
 		"ls":
-			console.current_directory.unlock_hidden_connections()
+			command_and_arguments[1].unlock_hidden_connections()
+		"rm":
+			command_and_arguments[1].remove_bug()
 
 
 func _input(event):
@@ -60,14 +71,19 @@ func _on_monster_catched_player():
 	end_game(false)
 
 func _player_entered_winning_folder():
-	end_game(true)
+	if bug_counter == 0:
+		end_game(true)
+	
+func _on_player_removed_bug():
+	bug_counter -= 1
+	
 
 func setup_folder(connection_description : Dictionary, hidden_folders : Array):
 	for folder_name in connection_description:
 		var folder = find_child(folder_name)
 		folder.connected_folders = get_connected_folders(connection_description[folder_name])
 		folder.connect("monster_cached_player", _on_monster_catched_player)
-	
+		folder.connect("bug_removed", _on_player_removed_bug)
 	find_child(finish_folder).connect("player_entered", _player_entered_winning_folder)
 	
 	for folder in hidden_folders:
