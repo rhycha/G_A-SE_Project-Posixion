@@ -9,7 +9,7 @@ var connections = {
 	"root": ["usr", "bin"]
 }
 
-var monster_position = []
+var monster_position = ["bin"]
 
 var hidden_folders = []
 

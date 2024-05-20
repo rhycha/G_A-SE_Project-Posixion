@@ -1,33 +1,66 @@
 extends Node2D
 
 var folder_connections = {
-	"etc": ["usr"],
-	"logs": [],
-	"usr": ["logs", "packages"],
-	"packages": [],
-	"data": [],
-	"tools": [],
-	"http": [],
-	"sys": [],
-	"modules": [],
-	"kernel": [],
-	"temp": [],
-	"cache": [],
+	"cry": [
+		"I"
+	],
+	"I": [
+		"cry",
+		"am",
+		"home"
+	],
+	"home": [
+		"I",
+		"you",
+		"bug"
+	],
+	"bug": [
+		"home"
+	],
+	"am": [
+		"I",
+		"fool"
+	],
+	"fool": [
+		"am"
+	],
+	"crushed": [
+		"by_car",
+		"my_car",
+		"you"
+	],
+	"my_car": [
+		"crushed"
+	],
+	"by_car": [
+		"crushed"
+	],
+	"you": [
+		"home",
+		"crushed",
+		"and"
+	],
+	"and": [
+		"you",
+		"your"
+	],
+	"your": [
+		"and",
+		"brother"
+	],
+	"brother": [
+		"your"
+	]
 }
 
-var monsers_spawn_positions = ["data"]
+#var monsers_spawn_positions = []
+var monsers_spawn_positions = ["bug"]
 
+var hidden_folders = ["my_car"]
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$BaseLevel.setup(folder_connections, monsers_spawn_positions)
+	$BaseLevel.setup(folder_connections, monsers_spawn_positions, hidden_folders)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_root_player_entered():
-	$BaseLevel.end_game(true)

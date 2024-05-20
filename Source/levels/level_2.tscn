@@ -8,41 +8,44 @@
 script = ExtResource("1_jua8i")
 
 [node name="BaseLevel" parent="." instance=ExtResource("2_w5e4l")]
+player_start = "cry"
+finish_folder = "my_car"
 
-[node name="etc" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(135, 584)
+[node name="fool" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1491, 1430)
 
-[node name="logs" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(815, 64)
+[node name="cry" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(142, 862)
 
-[node name="usr" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(806, 586)
+[node name="bug" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(773, -213)
 
-[node name="packages" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(817, 1181)
+[node name="home" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(792, 372)
 
-[node name="data" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(1531, 49)
+[node name="I" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(803, 877)
 
-[node name="tools" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(1552, 603)
+[node name="am" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(814, 1403)
 
-[node name="http" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(1536, 1187)
+[node name="you" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1458, 374)
 
-[node name="sys" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(2284, 56)
+[node name="crushed" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1482, 858)
 
-[node name="modules" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(2276, 620)
+[node name="my_car" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(1493, 1154)
 
-[node name="kernel" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(2270, 1181)
+[node name="and" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2125, 404)
 
-[node name="temp" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(3100, 638)
+[node name="by_car" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2144, 858)
 
-[node name="cache" parent="BaseLevel" instance=ExtResource("3_114h1")]
-position = Vector2(3095, 90)
+[node name="your" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2905, 870)
 
-[connection signal="player_entered" from="BaseLevel/data" to="." method="_on_root_player_entered"]
+[node name="brother" parent="BaseLevel" instance=ExtResource("3_114h1")]
+position = Vector2(2896, 395)

@@ -20,4 +20,5 @@ func _ready():
 	move_timer.wait_time = move_speed
 
 func _on_move_timer_timeout():
+	move_timer.stop()
 	current_folder.check_in("Player")

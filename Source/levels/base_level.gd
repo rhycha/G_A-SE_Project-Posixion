@@ -29,9 +29,7 @@ func interpret_command_result(result):
 			var destination_folder = find_child(command_and_arguments[1])
 			player.move(destination_folder)
 			console.setup(destination_folder)
-			print("oo")
 		"ls":
-			print("siema")
 			console.current_directory.unlock_hidden_connections()
 
 

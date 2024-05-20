@@ -15,6 +15,7 @@ signal player_entered
 func check_in(entity_name : String):
 	entities_inside.append(entity_name)
 	if "Player" in entities_inside and "Monster" in entities_inside:
+		print(entities_inside)
 		monster_cached_player.emit()
 		
 	if "Player" in 	entities_inside:
@@ -43,7 +44,8 @@ func get_connected_folders_names() -> Array:
 	return output
 
 func check_out(entity_name : String):
-	entities_inside.erase(entity_name)	
+	entities_inside.erase(entity_name)
+	print(entities_inside)
 
 func get_player_position():
 	return player_position.global_position
