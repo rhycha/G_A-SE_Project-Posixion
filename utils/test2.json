@@ -1,0 +1,24 @@
+{
+    "usr": [
+        "bin",
+        "heavy"
+    ],
+    "bin": [
+        "usr",
+        "proc"
+    ],
+    "proc": [
+        "bin",
+        "download"
+    ],
+    "heavy": [
+        "usr"
+    ],
+    "download": [
+        "proc",
+        ".hidden"
+    ],
+    ".hidden": [
+        "download"
+    ]
+}
