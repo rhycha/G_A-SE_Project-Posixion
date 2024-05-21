@@ -1,15 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc6bhuqiilc16"]
+[gd_scene load_steps=8 format=3 uid="uid://cc6bhuqiilc16"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5sre0"]
-[ext_resource type="Texture2D" uid="uid://fnxmbkaupp33" path="res://player/slime2.png" id="2_icehk"]
+[ext_resource type="Texture2D" uid="uid://fjr41j8b0w6h" path="res://player/SlimeAnimation/SlimeRibbonFaceframe0000.png" id="2_pv6qu"]
+[ext_resource type="Texture2D" uid="uid://bnfc8nyc7q6a7" path="res://player/SlimeAnimation/SlimeRibbonFaceframe0001.png" id="3_jd6yw"]
+[ext_resource type="Texture2D" uid="uid://cgf05x4k80qev" path="res://player/SlimeAnimation/SlimeRibbonFaceframe0002.png" id="4_robv2"]
+[ext_resource type="Texture2D" uid="uid://bqdhfdd1wpf3l" path="res://player/SlimeAnimation/SlimeRibbonFaceframe0003.png" id="5_on8b1"]
+[ext_resource type="Texture2D" uid="uid://jcnioqe30u08" path="res://player/SlimeAnimation/SlimeRibbonFaceframe0004.png" id="6_vy31p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfoxh"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pv6qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jd6yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_robv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_on8b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vy31p")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 15.0
+}]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_5sre0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(17, 34)
 scale = Vector2(0.396296, 0.396296)
-texture = ExtResource("2_icehk")
+sprite_frames = SubResource("SpriteFrames_rfoxh")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.802957
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -2)

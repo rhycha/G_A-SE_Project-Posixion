@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4h40qjpuncxt"]
+[gd_scene load_steps=6 format=3 uid="uid://d4h40qjpuncxt"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_3ugq5"]
+[ext_resource type="Texture2D" uid="uid://b64fo8iqfh7im" path="res://UI/logo/frame0000.png" id="2_6b8wx"]
+[ext_resource type="Texture2D" uid="uid://wastkkw7wpx7" path="res://UI/logo/frame0001.png" id="3_7nsh1"]
+[ext_resource type="Texture2D" uid="uid://dnubvwgdv6yvp" path="res://UI/logo/frame0002.png" id="4_kbont"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7kq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6b8wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7nsh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kbont")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_3ugq5")
@@ -48,6 +68,13 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Level 3
 "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(961, 329)
+scale = Vector2(0.468519, 0.468519)
+sprite_frames = SubResource("SpriteFrames_h7kq4")
+autoplay = "default"
+frame_progress = 0.650792
 
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
