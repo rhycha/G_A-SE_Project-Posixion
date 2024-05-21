@@ -1,18 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpbwq63d6ipr7"]
+[gd_scene load_steps=13 format=3 uid="uid://dpbwq63d6ipr7"]
 
 [ext_resource type="Script" path="res://enemies/tooth_monser/tooth_monser.gd" id="1_21k8w"]
-[ext_resource type="Texture2D" uid="uid://cpk7gcwycgpaa" path="res://enemies/tooth_monser/Enemy1.png" id="2_5x87m"]
+[ext_resource type="Texture2D" uid="uid://jsq331nt26q0" path="res://enemies/tooth_monser/Enemy/Monster_frame0000.png" id="2_5fai3"]
+[ext_resource type="Texture2D" uid="uid://bnkfo6fvhrery" path="res://enemies/tooth_monser/Enemy/Monster_frame0002.png" id="3_p3ai0"]
 [ext_resource type="PackedScene" uid="uid://cakqcll0w3t83" path="res://UI/timer/visual_timer.tscn" id="3_y8kur"]
+[ext_resource type="Texture2D" uid="uid://m1hf27ugsq1" path="res://enemies/tooth_monser/Enemy/Monster_frame0004.png" id="4_1xq8n"]
 [ext_resource type="Texture2D" uid="uid://dbcssj30grsfn" path="res://enemies/tooth_monser/Arrow.png" id="4_b6fvc"]
+[ext_resource type="Texture2D" uid="uid://dq4ymloduhrs6" path="res://enemies/tooth_monser/Enemy/Monster_frame0006.png" id="5_e42kl"]
+[ext_resource type="Texture2D" uid="uid://c18j0xn0d5njv" path="res://enemies/tooth_monser/Enemy/Monster_frame0008.png" id="6_3tdgq"]
+[ext_resource type="Texture2D" uid="uid://v0nk03f8kqtb" path="res://enemies/tooth_monser/Enemy/Monster_frame0010.png" id="7_7m6fn"]
+[ext_resource type="Texture2D" uid="uid://cd13spnqek0sg" path="res://enemies/tooth_monser/Enemy/Monster_frame0012.png" id="8_gj82o"]
+[ext_resource type="Texture2D" uid="uid://uewjtkvd8n63" path="res://enemies/tooth_monser/Enemy/Monster_frame0014.png" id="9_n7cmw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o12lj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5fai3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p3ai0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1xq8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e42kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3tdgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7m6fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gj82o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n7cmw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [node name="ToothMonser" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_21k8w")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.99994, -14)
-scale = Vector2(0.418519, 0.418519)
-texture = ExtResource("2_5x87m")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.50926, 0.509259)
+sprite_frames = SubResource("SpriteFrames_o12lj")
+autoplay = "default"
+frame_progress = 0.751847
 
 [node name="Timer" type="Timer" parent="."]
 
