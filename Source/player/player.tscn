@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc6bhuqiilc16"]
 
-[ext_resource type="Texture2D" uid="uid://8f1ajykc0nq3" path="res://player/player.png" id="1_1haxp"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_5sre0"]
+[ext_resource type="Texture2D" uid="uid://fnxmbkaupp33" path="res://player/slime2.png" id="2_icehk"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_5sre0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_1haxp")
+position = Vector2(17, 34)
+scale = Vector2(0.396296, 0.396296)
+texture = ExtResource("2_icehk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -2)
