@@ -1,7 +1,9 @@
 import xml.etree.ElementTree as ET
 import argparse
 import json
-import os
+import html
+import re
+
 
 def parse_drawio_xml(file_path):
     tree = ET.parse(file_path)
@@ -17,6 +19,13 @@ def parse_drawio_xml(file_path):
     for cell in root.findall('.//mxCell[@vertex="1"]'):
         cell_id = cell.get('id')
         cell_value = cell.get('value')
+        
+        # Clean the cell value
+        if cell_value:
+            cell_value = html.unescape(cell_value)
+            cell_value = re.sub(r'<[^>]*>', '', cell_value)  # Remove HTML tags
+            cell_value = cell_value.strip()
+        
         id_to_name[cell_id] = cell_value
         connections[cell_value] = []
 
