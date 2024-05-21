@@ -74,7 +74,7 @@ position = Vector2(961, 329)
 scale = Vector2(0.468519, 0.468519)
 sprite_frames = SubResource("SpriteFrames_h7kq4")
 autoplay = "default"
-frame_progress = 0.650792
+frame_progress = 0.852619
 
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]

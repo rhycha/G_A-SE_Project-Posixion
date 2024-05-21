@@ -44,7 +44,7 @@ scale = Vector2(0.396296, 0.396296)
 sprite_frames = SubResource("SpriteFrames_rfoxh")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.802957
+frame_progress = 0.708272
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -2)
