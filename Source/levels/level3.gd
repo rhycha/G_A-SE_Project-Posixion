@@ -36,20 +36,18 @@ var folder_connections = {
 	],
 	"bug": [
 		"the",
-		"use",
-		"bug",
-		"bug"
+		"use"
 	],
 	"use": [
 		"bug",
-		"pkill"
+		"rm"
 	],
-	"pkill": [
+	"rm": [
 		"use",
 		"command"
 	],
 	"command": [
-		"pkill",
+		"rm",
 		"with"
 	],
 	"with": [
@@ -146,7 +144,7 @@ var monsers_spawn_positions = ["bug", "send", "why", "money"]
 
 var hidden_folders = ["show", "your"]
 
-var bugged_folders = ["relation", "pkill", "want", "love", "best"]
+var bugged_folders = ["relation", "rm", "want", "love", "best"]
 
 func _ready():
 	$BaseLevel.setup(folder_connections, monsers_spawn_positions, hidden_folders)
