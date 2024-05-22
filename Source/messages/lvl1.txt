@@ -1,0 +1,12 @@
+Level 1: Welcome to Linux World
+Welcome to the Linux World! You've been kidnapped and find yourself trapped in a labyrinth of directories. 
+To escape and win the game, you must navigate through this maze and find the goal directory. But beware! 
+There's a monster lurking in the system. If you end up in the same directory as the monster, you will lose.
+
+In this game, you will use Linux commands to move between directories. 
+Use the command prompt located at the bottom left of your screen to type commands.
+
+To move from your current directory to a subdirectory, use the command:
+cd [DIRECTORY_NAME]
+
+Can you find your way to freedom without encountering the monster? Let's start moving and win this game!

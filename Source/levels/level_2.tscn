@@ -49,3 +49,10 @@ position = Vector2(2905, 870)
 
 [node name="brother" parent="BaseLevel" instance=ExtResource("3_114h1")]
 position = Vector2(2896, 395)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = -2175.0
+offset_top = -1612.0
+offset_right = 4976.0
+offset_bottom = 2851.0

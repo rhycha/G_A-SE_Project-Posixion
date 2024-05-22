@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var move_speed : int
 
 @onready var visual_timer = $VisualTimer
 
@@ -24,8 +25,12 @@ func get_next_folder():
 func move():
 	current_folder.check_out("Monster")
 	current_folder = next_folder
-	position = next_folder.get_enemy_position()
-	current_folder.check_in("Monster")
+	$Timer.stop()
+	$MoveTimer.start(move_speed)
+	visual_timer.hide()
+	var tween = create_tween()
+	tween.tween_property(self, "position", next_folder.get_enemy_position(), move_speed)
+	
 	
 func point_arrow():
 	var angle = global_position.angle_to_point(next_folder.position) 
@@ -33,5 +38,12 @@ func point_arrow():
 
 func _on_timer_timeout():
 	move()
+
+
+func _on_move_timer_timeout():
+	$MoveTimer.stop()
+	current_folder.check_in("Monster")
 	next_folder = get_next_folder()
 	point_arrow()
+	$Timer.start(period)
+	$VisualTimer.show()

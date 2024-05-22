@@ -1,0 +1,8 @@
+Level 2: Finding Hidden Directories
+In the Linux system, you can use the ls command to list the contents of the current directory. 
+This will show you all files and directories within it.
+There is a directory whose name you don't know, and to move to it, you'll need to discover its name first. 
+Navigate to the directory right before the unknown one, and use the ls command to reveal its name:
+ls
+
+Use your newly acquired knowledge to find and reach the hidden directory. Good luck!

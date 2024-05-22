@@ -1,11 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://csxbk6wno8p41"]
+[gd_scene load_steps=7 format=3 uid="uid://csxbk6wno8p41"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_2xkir"]
 [ext_resource type="PackedScene" uid="uid://25m43hoyddd8" path="res://levels/base_level.tscn" id="2_5e53p"]
 [ext_resource type="PackedScene" uid="uid://bjf1uig5og6vp" path="res://folder/folder.tscn" id="4_48234"]
+[ext_resource type="Texture2D" uid="uid://dhm4or3ngtdp6" path="res://UI/folder_lines/Paths/Path1.png" id="4_qxhmi"]
+[ext_resource type="Texture2D" uid="uid://dm2khyrs2bvfv" path="res://UI/folder_lines/Paths/Path2.png" id="5_x8cnb"]
+[ext_resource type="Texture2D" uid="uid://5miome38wjgk" path="res://UI/folder_lines/Paths/Path3.png" id="6_we14k"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_2xkir")
+
+[node name="Path1" type="Sprite2D" parent="."]
+position = Vector2(1121, 338)
+rotation = -0.401426
+scale = Vector2(0.585778, 0.627859)
+texture = ExtResource("4_qxhmi")
+
+[node name="Path2" type="Sprite2D" parent="."]
+position = Vector2(1467, 479)
+rotation = -1.77151
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("5_x8cnb")
+
+[node name="Path3" type="Sprite2D" parent="."]
+position = Vector2(1107, 668)
+rotation = 0.16057
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_we14k")
 
 [node name="BaseLevel" parent="." instance=ExtResource("2_5e53p")]
 player_start = "usr"
@@ -19,3 +40,10 @@ position = Vector2(1419, 215)
 
 [node name="root" parent="BaseLevel" instance=ExtResource("4_48234")]
 position = Vector2(1419, 730)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = -1802.0
+offset_top = -436.0
+offset_right = 2749.0
+offset_bottom = 1499.0

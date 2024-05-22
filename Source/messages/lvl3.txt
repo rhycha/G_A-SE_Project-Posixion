@@ -1,0 +1,10 @@
+Level 3: Bug Hunt
+Oh no! You've encountered a bug that prevents you from escaping this level! In Linux, you can remove files using the rm command.
+
+To remove the bug and proceed, use the command:
+
+rm [BUG_NAME]
+
+Eliminate the bug to clear your path and continue your escape. Can you fix the system and make it out alive?
+
+Good luck, brave adventurer!

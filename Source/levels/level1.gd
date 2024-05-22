@@ -8,10 +8,12 @@ var connections = {
 	"bin": ["usr", "root"],
 	"root": ["usr", "bin"]
 }
+var help_message_path = "res://messages/lvl1.txt"
 
 var monster_position = ["bin"]
 
+var lines = false
 var hidden_folders = []
 
 func _ready():
-	base_level.setup(connections, monster_position, hidden_folders)
+	base_level.setup(connections, help_message_path,  monster_position, hidden_folders, [], lines)

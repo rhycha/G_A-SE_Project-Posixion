@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dogvc3vpvi3xj"]
+
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="1_4pnga"]
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://common/Hack-Regular.ttf" id="2_bp4s6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_apsua"]
+font = ExtResource("2_bp4s6")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_usfvh"]
+font = ExtResource("2_bp4s6")
+font_size = 20
+
+[node name="objective" type="CanvasLayer"]
+script = ExtResource("1_4pnga")
+
+[node name="ConstantText" type="Label" parent="."]
+offset_left = 1278.0
+offset_top = 1004.0
+offset_right = 1902.0
+offset_bottom = 1181.0
+text = "press H for help"
+label_settings = SubResource("LabelSettings_apsua")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HelpText" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_usfvh")

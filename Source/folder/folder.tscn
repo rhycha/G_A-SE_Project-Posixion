@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c4iq3ustobl7x" path="res://folder/bug_icon.png" id="3_r37g1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mcmg1"]
-font_size = 24
+font_size = 36
 font_color = Color(0, 0, 0, 1)
+shadow_size = 10
 
 [node name="Folder" type="Node2D"]
 show_behind_parent = true
@@ -18,10 +19,10 @@ scale = Vector2(0.394444, 0.394444)
 texture = ExtResource("2_hawwg")
 
 [node name="Name" type="Label" parent="."]
-offset_left = -117.0
-offset_top = -69.0
-offset_right = -77.0
-offset_bottom = -46.0
+offset_left = -151.0
+offset_top = -112.0
+offset_right = -111.0
+offset_bottom = -62.0
 label_settings = SubResource("LabelSettings_mcmg1")
 
 [node name="PlayerPosition" type="Marker2D" parent="."]

@@ -9,13 +9,14 @@ extends Node2D
 
 var bug_counter : int
 
-func setup(connections : Dictionary, monsters_spawn_positions : Array, hidden_folders  = [], bugged_folders = []):
-	setup_folder(connections, hidden_folders)
+func setup(connections : Dictionary, help_message_path: String, monsters_spawn_positions:Array = [], hidden_folders  = [], bugged_folders = [], lines = true):
+	setup_folder(connections, hidden_folders, lines)
 	player.setup(find_child(player_start))
 	console.setup(find_child(player_start))
 	place_monsters(monsters_spawn_positions)
 	place_bugged_folders(bugged_folders)
 	bug_counter = len(bugged_folders)
+	$objective.setup(help_message_path)
 	
 func place_bugged_folders(bugged_folders : Array):
 	for folder in bugged_folders:
@@ -78,12 +79,13 @@ func _on_player_removed_bug():
 	bug_counter -= 1
 	
 
-func setup_folder(connection_description : Dictionary, hidden_folders : Array):
+func setup_folder(connection_description : Dictionary, hidden_folders : Array, lines:bool):
 	for folder_name in connection_description:
 		var folder = find_child(folder_name)
 		folder.connected_folders = get_connected_folders(connection_description[folder_name])
 		folder.connect("monster_cached_player", _on_monster_catched_player)
 		folder.connect("bug_removed", _on_player_removed_bug)
+		folder.set_to_draw(lines)
 	find_child(finish_folder).connect("player_entered", _player_entered_winning_folder)
 	
 	for folder in hidden_folders:
