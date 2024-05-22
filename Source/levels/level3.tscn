@@ -59,14 +59,14 @@ position = Vector2(570, 344)
 [node name="command" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 position = Vector2(570, 344)
 
-[node name="pkill" parent="BaseLevel" instance=ExtResource("2_wjuax")]
+[node name="rm" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 
 [node name="a" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 position = Vector2(570, 344)
 
 [node name="some" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 
-[node name="with2" parent="BaseLevel" instance=ExtResource("2_wjuax")]
+[node name="by" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 position = Vector2(570, 344)
 
 [node name="me" parent="BaseLevel" instance=ExtResource("2_wjuax")]
@@ -77,26 +77,25 @@ position = Vector2(570, 344)
 [node name="the" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 
 [node name="bug" parent="BaseLevel" instance=ExtResource("2_wjuax")]
-position = Vector2(570, 344)
+position = Vector2(7732, -393)
 
 [node name="should" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 
 [node name="money" parent="BaseLevel" instance=ExtResource("2_wjuax")]
-position = Vector2(570, 344)
+position = Vector2(7745, 90)
 
 [node name="love" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 
 [node name="your" parent="BaseLevel" instance=ExtResource("2_wjuax")]
-position = Vector2(570, 344)
+position = Vector2(7745, 611)
 
 [node name="show" parent="BaseLevel" instance=ExtResource("2_wjuax")]
 
 [node name="reason" parent="BaseLevel" instance=ExtResource("2_wjuax")]
-position = Vector2(570, 344)
+position = Vector2(7770, 1059)
 
 [node name="why" parent="BaseLevel" instance=ExtResource("2_wjuax")]
+position = Vector2(7744, 1518)
 
 [node name="we" parent="BaseLevel" instance=ExtResource("2_wjuax")]
-position = Vector2(606, 344)
-
-[node name="Folder4" parent="BaseLevel" instance=ExtResource("2_wjuax")]
+position = Vector2(7761, 2052)

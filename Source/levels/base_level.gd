@@ -9,11 +9,38 @@ extends Node2D
 
 var bug_counter : int
 
-func setup(connections : Dictionary, help_message_path: String, monsters_spawn_positions:Array = [], hidden_folders  = [], bugged_folders = [], lines = true):
+func place_folder(elements, grid_rows, grid_columns, grid_spacing, object_scene):
+	if elements != null:
+		var count = 0
+		for i in range(0, elements.size(), 2):
+			var pos = elements[i]
+			var text = elements[i + 1]
+			if object_scene is PackedScene:
+				var instance = object_scene.instantiate()
+				instance.position = Vector2(count % grid_columns * grid_spacing.x, int(count / grid_columns) * grid_spacing.y)
+				# Add text label
+				var label = Label.new()
+				label.text = text
+				label.position = Vector2(10, -10) # Adjust label position relative to object
+				instance.add_child(label)
+				add_child(instance)
+			else:
+				print("Error: object_scene is not a PackedScene")
+			count += 1
+		
+	
+func setup(connections : Dictionary, help_message_path: String, monsters_spawn_positions:Array = [], hidden_folders  = [], bugged_folders = [],\
+	elements = {}, grid_rows = [], grid_columns = [], grid_spacing = [], object_scene = "", \
+	lines = true):
 	setup_folder(connections, hidden_folders, lines)
+	place_folder(elements, grid_rows, grid_columns, grid_spacing, object_scene)
 	player.setup(find_child(player_start))
 	console.setup(find_child(player_start))
 	place_monsters(monsters_spawn_positions)
+	#if monsters_spawn_positions != null:
+		#place_monsters(monsters_spawn_positions)
+	#else:
+		#print("im sexy")
 	place_bugged_folders(bugged_folders)
 	bug_counter = len(bugged_folders)
 	$objective.setup(help_message_path)
