@@ -16,11 +16,11 @@ font_size = 20
 script = ExtResource("1_4pnga")
 
 [node name="ConstantText" type="Label" parent="."]
-offset_left = 1278.0
-offset_top = 1004.0
-offset_right = 1902.0
-offset_bottom = 1181.0
-text = "press H for help"
+offset_left = 1078.0
+offset_top = 998.0
+offset_right = 1897.0
+offset_bottom = 1175.0
+text = "press Escape for help"
 label_settings = SubResource("LabelSettings_apsua")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

@@ -14,15 +14,15 @@ func setup(help_text_path : String):
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_H:
+		if event.keycode == KEY_ESCAPE:
 			if text_visible:
 				$PanelContainer.hide()
 				text_visible = false
 				get_tree().paused = false
-				small_hint.text = "Press H for help"
+				small_hint.text = "Press escape for help"
 			else:
 				get_tree().paused = true
 				$PanelContainer.show()
 				text_visible = true
-				small_hint.text = "Press H to close"
+				small_hint.text = "Press escape to close"
 			
