@@ -11,7 +11,7 @@ var connections = {
 var monsers = []
 var hidden_folders = ["win"]
 var bugged_folders = ["usr"]
-var help_message_path = "res://messages/lvl1.txt"
+var help_message_path = "res://messages/lvl3.txt"
 
 func _ready():
 	base_level.setup(connections, help_message_path, monsers, hidden_folders, bugged_folders, true)

@@ -8,7 +8,6 @@ var text_visible = false
 
 
 func setup(help_text_path : String):
-	print("here")
 	var file = FileAccess.open(help_text_path, FileAccess.READ)
 	help_text.text = file.get_as_text()
 
