@@ -16,7 +16,7 @@ func setup(connections : Dictionary, help_message_path: String, monsters_spawn_p
 	place_monsters(monsters_spawn_positions)
 	place_bugged_folders(bugged_folders)
 	bug_counter = len(bugged_folders)
-	$objective.setup(help_message_path)
+	$HUD.setup(help_message_path)
 	
 func place_bugged_folders(bugged_folders : Array):
 	for folder in bugged_folders:
@@ -90,3 +90,5 @@ func setup_folder(connection_description : Dictionary, hidden_folders : Array, l
 	
 	for folder in hidden_folders:
 		find_child(folder).make_hidden()
+
+

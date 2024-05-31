@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://25m43hoyddd8"]
+[gd_scene load_steps=4 format=3 uid="uid://25m43hoyddd8"]
 
 [ext_resource type="PackedScene" uid="uid://cc6bhuqiilc16" path="res://player/player.tscn" id="1_tlcvo"]
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_wxu5d"]
 [ext_resource type="PackedScene" uid="uid://dqwvtxven33aj" path="res://UI/hud.tscn" id="2_4cwso"]
-[ext_resource type="PackedScene" uid="uid://dogvc3vpvi3xj" path="res://UI/objective.tscn" id="4_x35v2"]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_wxu5d")
@@ -14,6 +13,3 @@ script = ExtResource("1_wxu5d")
 move_speed = 1
 
 [node name="Monsters" type="Node2D" parent="."]
-
-[node name="objective" parent="." instance=ExtResource("4_x35v2")]
-process_mode = 3

@@ -1,11 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqwvtxven33aj"]
+[gd_scene load_steps=5 format=3 uid="uid://dqwvtxven33aj"]
 
+[ext_resource type="Script" path="res://UI/hud.gd" id="1_bdd1g"]
 [ext_resource type="PackedScene" uid="uid://doyxqlx6p277c" path="res://UI/console/console.tscn" id="1_r6qwm"]
+[ext_resource type="FontFile" uid="uid://xmewfts2fgkc" path="res://common/Hack-Regular.ttf" id="4_inmn6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eb265"]
+font = ExtResource("4_inmn6")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_bdd1g")
 
 [node name="CLI" parent="." instance=ExtResource("1_r6qwm")]
+process_mode = 0
 offset_left = 29.0
 offset_top = 677.0
 offset_right = 923.0
 offset_bottom = 1053.0
+
+[node name="ConstantText" type="Label" parent="."]
+offset_left = 1078.0
+offset_top = 998.0
+offset_right = 1897.0
+offset_bottom = 1175.0
+text = "press Escape for help"
+label_settings = SubResource("LabelSettings_eb265")

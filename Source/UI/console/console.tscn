@@ -16,6 +16,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0, 0, 0, 1)
 
 [node name="CLI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 894.0

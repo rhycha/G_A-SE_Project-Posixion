@@ -1,0 +1,14 @@
+{
+    "usr": [
+        "bin",
+        "root"
+    ],
+    "bin": [
+        "usr",
+        "root"
+    ],
+    "root": [
+        "bin",
+        "usr"
+    ]
+}

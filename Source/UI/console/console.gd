@@ -18,7 +18,15 @@ func clear():
 	input_field.clear()
 
 func _ready():
-	input_field.grab_focus()
+	input_field.grab_focus.call_deferred()
+
+func unfocus():
+	input_field.release_focus()
+
+func focus():
+	print("here")
+	input_field.grab_focus.call_deferred()
+
 
 func add_to_history(text):
 	command_history.append(text)
@@ -90,6 +98,7 @@ func remove(input_text : String):
 			return  [["rm", current_directory], input_text]
 		else:
 			return ["error", "rm: no such file as bug"]
+	return ["error", "rm: no such file as " + text[1]]
 	
 
 	
@@ -107,6 +116,7 @@ func parse_text() -> Array:
 			result = list(input_text)
 			add_to_history(result[1])
 		"rm":
+			print(result)
 			result = remove(input_text)
 			add_to_history(result[1])
 		_:
